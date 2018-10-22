@@ -1,0 +1,366 @@
+<!doctype html>
+<html>
+    <head>
+     
+        <script type="text/javascript" src="js1.js"></script>
+        <link rel="stylesheet" type="text/css" href="style1.css"/>
+    </head>
+ <body>
+     <div class="cs1">
+          <table>
+               <tr>
+                   <td> <br/><a href="index.html"> <img src="icc.png" style="margin-left:20px; height:100px;"/></a></td>
+                   <td>
+                     <h1 style="font-family:cambria;">SkyFi Mobiles</h1>
+                   </td>
+               </tr>
+          </table>
+
+
+        
+     </div>
+
+
+
+
+
+ 
+     <div class="divi1">
+         <ul class="ul1">
+            <li><a href="index.html" style="">Home</a></li>
+
+
+
+
+            <li><a href="mobileList.html"  style="text-decoration:none;">Mobile List</a></li>
+
+
+
+            <li style="width:200px;"><a href="detailsSpecification.html"   style="text-decoration:none;">Details Specification</a></li>
+            <li><a href="feedback.html"  style="text-decoration:none;">Feedback</a></li>
+         </ul>
+     </div>
+     <br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form class="login" name="rform" onsubmit="return validate()" method="POST" >
+                            <h2><center>Register Here</center></h2>
+                          <table>
+                              <tr>
+                                  <td>
+                                      <label>FirstName</label>
+                                  </td>
+                                  <td>
+                                      &nbsp;&nbsp;&nbsp;<input type="text" name="firstname" class="csb1" maxlength="50" placeholder="FirstName"/>
+                                      <div id="fname_er"></div>
+                                  </td>
+                              </tr>
+             
+                              <tr>
+                                   <td>
+                                       <label>LastName</label>
+
+
+
+                                       
+                                   </td>
+                                   <td>
+                                       &nbsp;&nbsp;&nbsp;<input type="text" name="lastname" class="csb1" maxlength="10" placeholder="LastName"/>
+                                       <div id="lname_er"></div>
+                                   </td>
+                               </tr>
+                             
+                        
+
+                               <tr>
+                                    <td>
+                                        <br/>
+                                        <label>Gender</label>
+                                    </td>
+                                    <td>
+                                        <br/>
+                                        <label><input type="radio" name="gender" class=""  value="Male"/>Male</label>
+                                        <label><input type="radio" name="gender" class=""  value="Female"/>Female</label>
+                                        <label><input type="radio" name="gender" class=""  value="Transgender"/>Transgender</label>
+                                        <div id="gender_er">
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                        <td>
+                                            <label>Email</label>
+                                        </td>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;<input type="email" name="emails" class="csb1" maxlength="20" placeholder="Email"/>
+                                            <div id="emails_er"></div>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                            <td>
+                                                <label>Contact No.</label>
+                                            </td>
+                                            <td>
+                                                &nbsp;&nbsp;&nbsp;<input type="text" name="contact" class="csb1" maxlength="20" placeholder="Phone Number"/>
+                                                <div id="contact_er"></div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                                <td>
+                                                    <label>Password</label>
+                                                </td>
+                                                <td>
+                                                    &nbsp;&nbsp;&nbsp;<input type="password" id="ps1" name="passwords" class="csb1" maxlength="20" placeholder="Password"/>
+
+
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                    <td>
+                                                        <label>Confirm Password</label>
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;&nbsp;&nbsp;<input type="password" id="cps1" name="confpass" class="csb1" maxlength="20" placeholder="Confirm Password"/>
+                                                        <div id="confpass_er"></div>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                        <td>
+                                                            <label>Address</label>
+                                                        </td>
+                                                        <td>
+                                                            &nbsp;&nbsp;&nbsp;<textarea style="height:100px;"  name="address" class="csb1" maxlength="300" placeholder="Address"></textarea>
+                                                            <div id="address_er"></div>
+                                                        </td>
+                                                    </tr>
+                
+
+                               
+                                       <tr>
+                                           <td></td>
+                                           <td>
+                                               <br/>                                                 <button style="background-color:gray; border-radius:5px; border:1px solid lightgray; height:35px; width:100px;
+                                                             margin-left:10px;">Submit</button>
+               
+                                                 <button style="background-color:gray; border-radius:5px; border:1px solid lightgray; height:35px; width:100px;
+                                                             margin-left:0px;">Cancel</button>
+               
+                                           </td>
+                                       </tr>
+               
+                                       <tr>
+                                           <td>
+                                               <a href="login.html">Login Here</a>
+                                           </td>
+                                       </tr>
+                          </table>
+                      </form>
+               
+
+
+<script type="text/javascript">
+       var firstname = document.forms["rform"]["firstname"];
+             var lastname = document.forms["rform"]["lastname"];
+            
+             var emails = document.forms["rform"]["emails"];
+             var contact = document.forms["rform"]["contact"];            
+             var confpass = document.forms["rform"]["confpass"];
+             var address = document.forms["rform"]["address"];
+
+
+
+
+
+             var fname_er = document.getElementById("fname_er");
+             var lname_er = document.getElementById("lname_er");
+                   
+             var emails_er = document.getElementById("emails_er");
+              var contact_er = document.getElementById("contact_er");
+             var confpass_er = document.getElementById("confpass_er");
+              var address_er = document.getElementById("address_er");
+            
+
+
+             firstname.addEventListener("blur",firstNameVerify,true);
+             lastname.addEventListener("blur",lastNameVerify,true);
+          
+             emails.addEventListener("blur",emailsVerify,true);
+             contact.addEventListener("blur",contactVerify,true);
+              confpass.addEventListener("blur",confpassVerify,true);
+              address.addEventListener("blur",addressVerify,true);
+           
+
+
+             function validate()
+             {
+                 if(firstname.value == "")
+                   {
+                      firstname.style.border = "1px solid red";
+                      fname_er.textContent = "FirstName is required";
+                      firstname.focus();
+                      return false;
+                   }
+
+
+                  if(lastname.value == "")
+                  {
+                    lastname.style.border = "1px solid red";
+                    lname_er.textContent = "LastName is required";
+                    lastname.focus();
+                    return false;
+                  } 
+
+
+
+
+                   if(emails.value == "")
+                  {
+                    emails.style.border = "1px solid red";
+                    emails_er.textContent = "Email is required";
+                    emails.focus();
+                    return false;
+                  }
+
+                  if(contact.value == "")
+                  {
+                    contact.style.border = "1px solid red";
+                    contact_er.textContent = "Contact Number is Required";
+                    contact.focus();
+                    return false;
+                  }
+
+                   if(address.value == "")
+                  {
+                    address.style.border = "1px solid red";
+                    address_er.textContent = "Address is Required";
+                    address.focus();
+                    return false;
+                  }
+             }
+
+
+             function firstNameVerify()
+             {
+                if(firstname.value != "")
+                {
+                    firstname.style.border = "1px solid royalblue";
+                    firstname_er.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+             function lastNameVerify()
+             {
+                if(lastname.value != "")
+                {
+                    lastname.style.border = "1px solid royalblue";
+                    lname_er.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+           
+
+
+              function emailsVerify()
+             {
+                if(emails.value != "")
+                {
+                    emails.style.border = "1px solid royalblue";
+                    emails_er.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+              function contactVerify()
+             {
+                if(contact.value != "")
+                {
+                    contact.style.border = "1px solid royalblue";
+                    contact_er.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+              function confpassVerify()
+             {
+                var k = document.getElementById("ps1").value;
+                var j = document.getElementById("cps1").value;
+
+                if(k != j)
+                {
+                  confpass.style.border = "1px solid royalblue";
+                  confpass_er.innerHTML = "Password donot match";
+                  return false;
+
+                }
+                else
+                {
+                  confpass.style.border = "1px solid royalblue";
+                  confpass_er.innerHTML = "";
+                  return true;
+                }
+             }
+
+
+              function addressVerify()
+             {
+                if(address.value != "")
+                {
+                    address.style.border = "1px solid royalblue";
+                    address_er.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+
+
+</script>
+
+
+
+   <div style="background-color:gray; margin-top:50px;height:130px;">
+    <br/>
+       <p class="cs90">&copy; Copyright 2018-2019 - SkyFi Mobile. All Rights Reserved. </p>
+ 
+       <p class="cs90">Powered by SkyFi Mobiles</p>
+
+       
+      </div>
+
+
+    
+ </body>   
+</html>

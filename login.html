@@ -1,0 +1,217 @@
+
+<!doctype html>
+<html>
+    <head>
+      
+        <script type="text/javascript" src="js1.js"></script>
+        <link rel="stylesheet" type="text/css" href="style1.css"/>
+    </head>
+ <body>
+         <div class="cs1">
+          <table>
+               <tr>
+                   <td> <br/><a href="index.html"> <img src="icc.png" style="margin-left:20px; height:100px;"/></a></td>
+                   <td>
+                     <h1 style="font-family:cambria;">SkyFi Mobiles</h1>
+                   </td>
+               </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+
+        
+     </div>
+
+           
+     <div class="divi1">
+         <ul class="ul1">
+            <li><a href="index.html" style="text-decoration:none;">Home</a></li>
+            <li><a href="mobileList.html"  style="text-decoration:none;">Mobile List</a></li>
+            <li style="width:200px;"><a href="detailsSpecification.html"   style="text-decoration:none;">Details Specification</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+         </ul>
+     </div>
+     <br/>
+     <br>
+     <br/>
+     <br/>
+
+
+
+
+
+                    <form class="login" name="lform" onsubmit="return validate()" method="POST" action="login.html">
+                            <h2><center>Login Here</center></h2>
+                          <table>
+                              <tr>
+                                  <td>
+                                      <label>Username</label>
+                                  </td>
+                                  <td>
+                                      &nbsp;&nbsp;&nbsp;<input type="text" name="username" class="csb1" maxlength="50" placeholder="Username"/>
+                                      <div id="username_error"></div>
+                                  </td>
+                              </tr>
+               
+                              <tr>
+                                   <td>
+                                       <label>Password</label>
+                                   </td>
+                                   <td>
+                                       &nbsp;&nbsp;&nbsp;<input type="text" name="password" class="csb1" maxlength="10" placeholder="Password"/>
+                                       <div id="password_err"></div>
+                                   </td>
+                               </tr>
+               
+               
+                               <tr>
+                                   <td>
+                                       
+
+
+
+
+                                   </td>
+                                   <td>
+                                       <label>&nbsp;&nbsp;<input type="checkbox" value="Remember Me"/>Remember Me </label>
+                                       <br/>
+                                   </td>
+                               </tr>
+               
+                               
+                                       <tr>
+                                           <td></td>
+                                           <td>
+                                                 <input type="submit" style="background-color:gray; border-radius:5px; border:1px solid lightgray; height:35px; width:100px;
+                                                             margin-left:10px;"/>
+               
+                                                 <button style="background-color:gray; border-radius:5px; border:1px solid lightgray; height:35px; width:100px;
+                                                             margin-left:0px;">Cancel</button>
+               
+                                           </td>
+                                       </tr>
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       <tr>
+                                           <td>
+                                              
+                                           </td>
+                                           <td>
+                                                <br/>
+                                                &nbsp; <a href="login.html">Forgot Password</a> &nbsp;&nbsp;
+                                               <a href="register.html">Register Here</a>
+                                           </td>
+                                       </tr>
+                          </table>
+                      </form>
+               
+
+
+       
+       <br/>
+       <br/>
+
+
+
+<div style="background-color:gray; margin-top:20px;height:130px;">
+    <br/>
+       <p class="cs90">&copy; Copyright 2018-2019 - SkyFi Mobile. All Rights Reserved. </p>
+ 
+       <p class="cs90">Powered by SkyFi Mobiles</p>
+
+       
+      </div>
+
+
+
+<script type="text/javascript">
+
+
+             var username = document.forms["lform"]["username"];
+             var password = document.forms["lform"]["password"];
+            
+
+             var username_error = document.getElementById("username_error");
+             var password_err = document.getElementById("password_err");
+           
+
+
+             username.addEventListener("blur",usernameVerify,true);
+             password.addEventListener("blur",passwordVerify,true);
+             
+
+
+             function validate()
+             {
+                 if(username.value == "")
+                   {
+                      username.style.border = "1px solid red";
+                      username_error.textContent = "username is required";
+                      username.focus();
+                      return false;
+                   }
+
+
+                  if(password.value == "")
+                  {
+                    password.style.border = "1px solid red";
+                    password_err.textContent = "Password is required";
+                    password.focus();
+                    return false;
+                  } 
+
+
+             }
+
+
+             function usernameVerify()
+             {
+                if(username.value != "")
+                {
+                    username.style.border = "1px solid royalblue";
+                    username_error.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+             function passwordVerify()
+             {
+                if(password.value != "")
+                {
+                    password.style.border = "1px solid royalblue";
+                    password_err.innerHTML = "";
+                    return true;
+
+                }
+             }
+     </script>
+    
+ </body>   
+</html>

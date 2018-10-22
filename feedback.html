@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+    <head>
+      
+        <script type="text/javascript" src="js1.js"></script>
+        <link rel="stylesheet" type="text/css" href="style1.css"/>
+    </head>
+ <body>
+         <div class="cs1">
+          <table>
+               <tr>
+                   <td> <br/><a href="index.html"> <img src="icc.png" style="margin-left:20px; height:100px;"/></a></td>
+                   <td>
+                     <h1 style="font-family:cambria;">SkyFi Mobiles</h1>
+                   </td>
+               </tr>
+          </table>
+
+
+        
+     </div>
+
+           
+     <div class="divi1">
+         <ul class="ul1">
+            <li><a href="index.html" style="text-decoration:none;">Home</a></li>
+
+            <li><a href="mobileList.html"  style="text-decoration:none;">Mobile List</a></li>
+
+            <li style="width:200px;"><a href="detailsSpecification.html"   style="text-decoration:none;">Details Specification</a></li>
+
+
+            <li><a href="feedback.html"  style="text-decoration:none;text-decoration:none; background-color:black; color:white;">Feedback</a></li>
+         </ul>
+     </div>
+     <br/>
+
+
+       <form class="form1" method="POST" action="feedback.html" onsubmit="return validate()" name="vform">
+           <table>
+               <tr>
+                   <td>
+                       <label>Username</label>
+                   </td>
+                   <td>
+                       &nbsp;&nbsp;&nbsp;<input type="text" name="username" class="csb1" maxlength="50" placeholder="Username"/>
+                       <div class="cs_90" id="username_error">
+                       </div>
+                       <br/>
+                   </td>
+               </tr>
+
+               <tr>
+                    <td>
+                        <label>Model Id</label>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;<input type="text" name="mobileid" class="csb1" maxlength="20" placeholder="Model Id (Mobile)"/>
+                        <div class="cs_90" id="mobileid_error"></div>
+                        <br/>
+                    </td>
+                </tr>
+
+                <tr>
+                        <td>
+                            <label>Email Id</label>
+                        </td>
+                        <td>
+                        &nbsp;&nbsp;&nbsp;<input type="email" name="emailid" class="csb1" maxlength="40" placeholder="Email Id"/>
+                            <div class="cs_90" id="emailid_error"></div>
+                            <br/>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                            <td>
+                                <label>Feedback</label>
+                            </td>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;<textarea rows="8" name="feedback" class="csb1" style="width:297px;height:108px;" placeholder=""  maxlength="300"></textarea>
+                                <div class="cs_90" id="feedback_error"></div>
+                                <br/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                  <button style="background-color:gray; border-radius:5px; border:1px solid lightgray; height:35px; width:100px;
+                                              margin-left:30px;">Submit</button>
+
+                                  <button style="background-color:gray; border-radius:5px; border:1px solid lightgray; height:35px; width:100px;
+                                              margin-left:0px;">Cancel</button>
+
+                            </td>
+                        </tr>
+           </table>
+       </form>
+
+
+
+
+<div style="background-color:gray; margin-top:20px;height:130px;">
+    <br/>
+       <p class="cs90">&copy; Copyright 2018-2019 - SkyFi Mobile. All Rights Reserved. </p>
+ 
+       <p class="cs90">Powered by SkyFi Mobiles</p>
+
+       
+      </div>
+
+
+
+<script type="text/javascript">
+
+             var username = document.forms["vform"]["username"];
+             var mobileid = document.forms["vform"]["mobileid"];
+             var emailid = document.forms["vform"]["emailid"];
+             var feedback = document.forms["vform"]["feedback"];
+
+             var username_error = document.getElementById("username_error");
+             var mobileid_error = document.getElementById("mobileid_error");
+             var emailid_error = document.getElementById("emailid_error");
+                var feedback_error = document.getElementById("feedback_error");
+
+
+             username.addEventListener("blur",nameVerify,true);
+             mobileid.addEventListener("blur",mobileidVerify,true);
+             emailid.addEventListener("blur",emailidVerify,true);
+               feedback.addEventListener("blur",feedbackVerify,true);
+
+
+             function validate()
+             {
+                 if(username.value == "")
+                   {
+
+                    
+                      username.style.border = "1px solid red";
+                      username_error.textContent = "Username is Required";
+                      username.focus();
+                      return false;
+                   }
+
+
+
+
+
+                  if(mobileid.value == "")
+                  {
+                    mobileid.style.border = "1px solid red";
+                    mobileid_error.textContent = "Mobile Id is Required";
+                    mobileid.focus();
+                    return false;
+                  } 
+
+
+
+                  if(emailid.value == "")
+                  {
+                    emailid.style.border = "1px solid red";
+                    emailid_error.textContent = "EmailId is required";
+                    emailid.focus();
+                    return false;
+                  }
+
+
+
+
+                   if(feedback.value == "")
+                  {
+                    feedback.style.border = "1px solid red";
+                    feedback_error.textContent = "Feedback is Required";
+                    feedback.focus();
+                    return false;
+                  }
+             }
+
+
+             function nameVerify()
+             {
+                if(username.value != "")
+                {
+                    username.style.border = "1px solid royalblue";
+                    username_error.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+             function mobileidVerify()
+             {
+                if(mobileid.value != "")
+                {
+                    var k = mobileid.value;
+                    if((k == 'Play On A-89') || (k == 'Wifi 7') || (k == 'Honor As 6') || (k == 'Konia NK') || (k == 'Kryons AX') || (k == 'Yo Mobiles'))
+                        {
+                          
+                        }
+                        else
+                        {
+                          alert("Sorry, no any mobile exists by id " + k);
+                        }
+                    mobileid.style.border = "1px solid royalblue";
+                    mobileid_error.innerHTML = "";
+                    return true;
+
+                }
+             }
+
+
+
+             function emailidVerify()
+             {
+
+               if(emailid.value != "")
+                {
+                    emailid.style.border = "1px solid royalblue";
+                    emailid_error.innerHTML = "";
+                    return true;
+
+                }
+
+             }
+
+
+
+             function feedbackVerify()
+             {
+
+               if(feedback.value != "")
+                {
+
+                    feedback.style.border = "1px solid royalblue";
+                    feedback_error.innerHTML = "";
+                    return true;
+
+                }
+
+             }
+</script>
+
+
+
+
+    
+ </body>   
+</html>
